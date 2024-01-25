@@ -3,7 +3,7 @@ import { SongContext } from '@/context/SongContext'
 
 // Paso 3. Crear un custom hook para usar el contexto (consumirlo)
 
-export default function useSongContext () {
+export function useSongContext () {
   const context = useContext(SongContext)
 
   if (context === undefined) {
