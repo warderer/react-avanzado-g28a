@@ -46,3 +46,9 @@ function SongProvider ({ children }) {
 }
 
 export { SongContext, SongProvider }
+
+/* USO DE CONTEXT */
+
+// 4. Ir a un componente superior y envolver los componentes que van a usar el contexto con el provider <SongProvider>
+
+// 5. Usar el contexto donde lo necesitemos usando el custom hook useSongContext
