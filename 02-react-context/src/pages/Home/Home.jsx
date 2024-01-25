@@ -15,7 +15,6 @@ const Home = () => {
         </div>
 
         <div className='derecho'>
-          <h2>SongDetail</h2>
           <SongDetails />
         </div>
       </div>
