@@ -20,6 +20,7 @@ function SongProvider ({ children }) {
   const [loading, setLoading] = useState(true) // ¿esta cargando?
   // Siempre se llama value el prop del provider que contiene la data que se va a compartir.
   const [selectedSong, setSelectedSong] = useState({}) // canción seleccionada
+  const [search, setSearch] = useState('') // Identifica la palabra que pongo en el buscador
 
   useEffect(() => {
     // Simulo la llamada a API añadiendo un pequeño retraso
@@ -34,7 +35,9 @@ function SongProvider ({ children }) {
     list,
     loading,
     selectedSong,
-    setSelectedSong
+    setSelectedSong,
+    search,
+    setSearch
   }
 
   // El prop que contiene la información que se va a compartir se llama value (obligatorio).
