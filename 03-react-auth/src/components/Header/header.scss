@@ -1,0 +1,32 @@
+$menu-color: #3d3d3d;
+$header-background: #d2d4d8;
+
+
+@mixin header-link(){
+    color: $menu-color;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.header {
+    background-color: $header-background;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+
+    &__logo {
+        @include header-link
+    }
+
+    &__nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        gap: 20px;
+    }
+
+    &__item-link {
+        @include header-link
+    }
+}

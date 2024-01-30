@@ -4,21 +4,22 @@ function Header() {
   return (
     <nav className='header'>
         <a className='header__logo' href="/">Logo</a>
-        <ul className=''>
-            <li>
-                <a href="/home">Home</a>
+
+        <ul className='header__nav-list'>
+            <li className='header__list-item'>
+                <a className='header__item-link header__item-link--is-active' href="/home">Home</a>
             </li>
-            <li>
-                <a href="/dashboard">Dashboard</a>
+            <li className='header__list-item'>
+                <a className='header__item-link' href="/dashboard">Dashboard</a>
             </li>
-            <li>
-                <a href="/secret">Secret</a>
+            <li className='header__list-item'>
+                <a className='header__item-link' href="/secret">Secret</a>
             </li>
-            <li>
-                <a href="/login">Login</a>
+            <li className='header__list-item'>
+                <a className='header__item-link' href="/login">Login</a>
             </li>
-            <li>
-                <a href="/signup">Signup</a>
+            <li className='header__list-item'>
+                <a className='header__item-link' href="/signup">Signup</a>
             </li>
         </ul>
     </nav>
