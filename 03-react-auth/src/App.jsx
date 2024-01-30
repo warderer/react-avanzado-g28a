@@ -1,11 +1,18 @@
-import './App.css'
+import "./App.css";
+import Header from "./components/Header";
+import {Home, Dashboard, Secret, Login, Signup} from '@/pages'
 
 function App() {
   return (
     <>
-      <h1>Hola a todos</h1>
+      <Header />
+      <Home />
+      <Dashboard />
+      <Secret />
+      <Login />
+      <Signup />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
