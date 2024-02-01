@@ -1,16 +1,15 @@
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
-import {Home, Dashboard, Secret, Login, Signup} from '@/pages'
+import RoutesIndex from "@/routes";
 
 function App() {
   return (
     <>
-      <Header />
-      <Home />
-      <Dashboard />
-      <Secret />
-      <Login />
-      <Signup />
+      <BrowserRouter>
+        <Header />
+        <RoutesIndex />
+      </BrowserRouter>
     </>
   );
 }
