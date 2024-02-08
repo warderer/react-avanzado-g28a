@@ -17,7 +17,7 @@ function Login () {
     try {
       const response = await loginUserServices(data)
       if (response.status === 200) {
-        console.log('OK')
+        localStorage.setItem('token', response.data.token)
         navigate('/dashboard')
       }
       console.log('response', response)
