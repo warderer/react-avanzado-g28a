@@ -3,14 +3,14 @@ import { getAllItemsService } from '@/services/itemServices'
 
 function Home () {
   // Estado para guardar la info de los productos
-  const [itemsData, setitemsData] = useState([])
+  const [itemsData, setItemsData] = useState([])
 
   useEffect(() => {
     const getUserData = async () => {
       try {
         const response = await getAllItemsService()
         if (response.status === 200) {
-          setitemsData(response.data)
+          setItemsData(response.data)
         }
       } catch (error) {
         console.log('error', error.message)
