@@ -1,10 +1,13 @@
 import { useNavigate } from 'react-router-dom'
 import { loginUserServices } from '@/services/useServices'
 import { useForm } from 'react-hook-form'
+import { useAuthContext } from '@/hooks/useAuth'
 import Logo from '@/assets/react.svg'
 import '@/styles/form.css'
 
 function Login () {
+  const { login } = useAuthContext()
+
   const navigate = useNavigate()
 
   const {
@@ -17,7 +20,7 @@ function Login () {
     try {
       const response = await loginUserServices(data)
       if (response.status === 200) {
-        localStorage.setItem('token', response.data.token)
+        login(response.data.token)
         navigate('/dashboard')
       }
       console.log('response', response)
