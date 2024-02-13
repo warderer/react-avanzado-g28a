@@ -23,4 +23,21 @@ describe('Funcionalidad de Login', () => {
     cy.url().should('include', '/dashboard')
     cy.contains('Dashboard') // 03. Assert: Verifico el resultado (¿que espero?)
   })
+
+  it('Cuando haga Logout como ADMIN me debe llevar a la página de Home', () => {
+    cy.intercept('POST', 'https://ecommerce-json-jwt.onrender.com/login').as('loginRequest')
+    // 01. Arrange: Setup del estado de mi aplicación (¿donde inicio?)
+    cy.visit('/login')
+
+    // 02. Act: Interactuo con la aplicación (¿que hago?)
+    cy.get('input[name="email"]').type('superman@dc.com')
+    cy.get('input[name="password"]').type('superman')
+    cy.get('button[type="submit"]').click()
+
+    cy.wait('@loginRequest') // Espera la llamada a API
+
+    cy.get('nav > ul li:last').click()
+    // 03. Assert: Verifico el resultado (¿que espero?)
+    cy.get('h1').contains('Home')
+  })
 })
